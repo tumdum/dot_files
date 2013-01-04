@@ -2,6 +2,7 @@ syntax on
 filetype plugin indent on
 
 set nu
+set relativenumber
 colorscheme desert
 
 " disable arrow keys
