@@ -35,6 +35,7 @@ set hlsearch                    " highlight current search
 set incsearch                   " incremental search
 set ignorecase                  " ignore case when searching
 set smartcase                   " unless a capital letter is used
+set ff=unix                     " end lines unix-style
 
 " Turn off annoying error bells:
 set noerrorbells
