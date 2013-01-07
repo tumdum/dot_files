@@ -1,7 +1,6 @@
 syntax on
 filetype plugin indent on
 
-set nu
 set relativenumber
 colorscheme desert
 
@@ -51,5 +50,7 @@ if has("gui_running")
 endif
 
 if has("win32")
-	set gfn=Lucida_Console:h12 
+	set gfn=Lucida_Console:h12
+elseif has("mac")
+  set gfn=Menlo\ Regular:h14
 endif
