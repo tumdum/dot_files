@@ -57,3 +57,11 @@ endif
 
 " make it easy to type vim commands (without need to press shift)
 nnoremap ; :
+
+" make it easy to edit vimrc
+nnoremap <leader>ev :split $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+" map jk as esc since its easier to reach
+inoremap jk <esc>
+inoremap <esc> <nop>
+call pathogen#infect()
