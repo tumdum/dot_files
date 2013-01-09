@@ -20,7 +20,7 @@ set backspace=indent,eol,start 	" Enable backspacing over selected things
 set nocompatible              	" vim, not vi
 set scrolloff=5               	" keep at least 5 lines above/below
 set sidescrolloff=5           	" keep at least 5 lines left/right
-set history=200                 " remember last 200 items
+set history=1000                 " remember last 200 items
 set nobackup                    " disable backup files
 
 set autoindent                  " set the cursor at same indent as line above
@@ -54,3 +54,6 @@ if has("win32")
 elseif has("mac")
   set gfn=Menlo\ Regular:h14
 endif
+
+" make it easy to type vim commands (without need to press shift)
+nnoremap ; :
