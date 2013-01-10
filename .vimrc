@@ -22,6 +22,7 @@ set scrolloff=5               	" keep at least 5 lines above/below
 set sidescrolloff=5           	" keep at least 5 lines left/right
 set history=200                 " remember last 200 items
 set nobackup                    " disable backup files
+set noswapfile                  " disable swap files
 
 set autoindent                  " set the cursor at same indent as line above
 set smartindent                 " try to be smart about indenting (C-style)
