@@ -67,6 +67,3 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 inoremap jk <esc>
 inoremap <esc> <nop>
 call pathogen#infect()
-
-" reformat Go code using gofmt
-autocmd BufWritePre *.go %! gofmt
