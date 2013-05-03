@@ -7,8 +7,6 @@ colorscheme desert
 " disable arrow keys
 map <up> <nop>
 map <down> <nop>
-map <left> <nop>
-map <right> <nop>
 imap <up> <nop>
 imap <down> <nop>
 imap <left> <nop>
@@ -59,6 +57,10 @@ endif
 
 " make it easy to type vim commands (without need to press shift)
 nnoremap ; :
+
+" make it easy to switch tabs with left and right arrows in normal mode
+nnoremap <left> :tabprev<cr>
+nnoremap <right> :tabnext<cr>
 
 " make it easy to edit vimrc
 nnoremap <leader>ev :split $MYVIMRC<cr>
