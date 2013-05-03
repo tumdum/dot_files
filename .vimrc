@@ -48,6 +48,7 @@ if has("gui_running")
 	set guioptions-=T  "remove toolbar
 	set guioptions-=r  "remove right-hand scroll bar
 	set guioptions+=c  "Using Vim warning style in gVim: http://stackoverflow.com/questions/4193654/using-vim-warning-style-in-gvim
+  set guioptions-=e  "gui tabs rendered the same way as console tabs!
 endif
 
 if has("win32")
