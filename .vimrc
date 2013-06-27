@@ -5,10 +5,10 @@ set relativenumber
 colorscheme desert
 
 " disable arrow keys
-map <up> <nop>
-map <down> <nop>
-map <left> <nop>
-map <right> <nop>
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
 imap <up> <nop>
 imap <down> <nop>
 imap <left> <nop>
@@ -68,4 +68,4 @@ inoremap <esc> <nop>
 call pathogen#infect()
 
 " reformat Go code using gofmt
-autocmd BufWritePre *.go %! gofmt
+" autocmd BufWritePre,BufRead *.go %! gofmt
