@@ -43,21 +43,28 @@ set visualbell
 set t_vb=
 
 if has("gui_running")
-	" disable gui toolbars
-	set guioptions-=m  "remove menu bar
-	set guioptions-=T  "remove toolbar
-	set guioptions-=r  "remove right-hand scroll bar
-	set guioptions+=c  "Using Vim warning style in gVim: http://stackoverflow.com/questions/4193654/using-vim-warning-style-in-gvim
+  " disable gui toolbars
+  set guioptions-=m  "remove menu bar
+  set guioptions-=T  "remove toolbar
+  set guioptions-=r  "remove right-hand scroll bar
+  set guioptions-=l  "remove left-hand scroll bar
+  set guioptions-=L  "remove left hand scroll bar when in vsplit
+  set guioptions+=c  "Using Vim warning style in gVim: http://stackoverflow.com/questions/4193654/using-vim-warning-style-in-gvim
+  set guioptions-=e  "gui tabs rendered the same way as console tabs!
 endif
 
 if has("win32")
-	set gfn=Lucida_Console:h12
+  set gfn=Lucida_Console:h12
 elseif has("mac")
   set gfn=Menlo\ Regular:h14
 endif
 
 " make it easy to type vim commands (without need to press shift)
 nnoremap ; :
+
+" make it easy to switch tabs with left and right arrows in normal mode
+nnoremap <left> :tabprev<cr>
+nnoremap <right> :tabnext<cr>
 
 " make it easy to edit vimrc
 nnoremap <leader>ev :split $MYVIMRC<cr>
@@ -66,6 +73,3 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 inoremap jk <esc>
 inoremap <esc> <nop>
 call pathogen#infect()
-
-" reformat Go code using gofmt
-" autocmd BufWritePre,BufRead *.go %! gofmt
