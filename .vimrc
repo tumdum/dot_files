@@ -1,5 +1,6 @@
+set nocompatible               " be iMproved
+filetype off
 syntax on
-filetype plugin indent on
 
 set relativenumber
 
@@ -72,6 +73,26 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 " map jk as esc since its easier to reach
 inoremap jk <esc>
 inoremap <esc> <nop>
-call pathogen#infect()
+
+nnoremap <F1> :FufFile<cr>
+
+" Vundle
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
+
+" My bundles:
+Bundle 'Valloric/YouCompleteMe'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'altercation/vim-colors-solarized'
+
+Bundle 'L9'
+Bundle 'FuzzyFinder'
+
 colorscheme solarized
 set background=dark
+
+filetype plugin indent on
