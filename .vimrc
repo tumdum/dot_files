@@ -50,6 +50,7 @@ if has("gui_running")
   set guioptions-=L  "remove left hand scroll bar when in vsplit
   set guioptions+=c  "Using Vim warning style in gVim: http://stackoverflow.com/questions/4193654/using-vim-warning-style-in-gvim
   set guioptions-=e  "gui tabs rendered the same way as console tabs!
+  set listchars=trail:·,precedes:«,extends:»,tab:▸▸
 endif
 
 if has("win32")
