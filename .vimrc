@@ -20,9 +20,11 @@ set backspace=indent,eol,start 	" Enable backspacing over selected things
 set nocompatible              	" vim, not vi
 set scrolloff=5               	" keep at least 5 lines above/below
 set sidescrolloff=5           	" keep at least 5 lines left/right
-set history=1000                 " remember last 200 items
+set history=1000
 set nobackup                    " disable backup files
 set noswapfile                  " disable swap files
+set undofile
+set undodir=~/.vim/undo
 
 set autoindent                  " set the cursor at same indent as line above
 set smartindent                 " try to be smart about indenting (C-style)
@@ -75,6 +77,10 @@ inoremap jk <esc>
 inoremap <esc> <nop>
 
 nnoremap <F1> :FufFile<cr>
+nnoremap <F5> :GundoToggle<CR>
+
+" save all when we lost focus
+:au FocusLost * silent! wa
 
 " Vundle
 set rtp+=~/.vim/bundle/vundle/
@@ -84,15 +90,33 @@ call vundle#rc()
 " required! 
 Bundle 'gmarik/vundle'
 
-" My bundles:
+" Github:
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'sjl/gundo.vim'
+Bundle 'sjl/vitality.vim'
 
+" Vim.org:
 Bundle 'L9'
 Bundle 'FuzzyFinder'
 
-colorscheme solarized
 set background=dark
+let g:solarized_termtrans = 1
+colorscheme solarized
+
+if colors_name == 'solarized'
+  if has('gui_macvim')
+    set transparency=0
+  endif
+
+  if !has('gui_running') && $TERM_PROGRAM == 'Apple_Terminal'
+    let g:solarized_termcolors = &t_Co
+    let g:solarized_termtrans = 1
+    colorscheme solarized
+  endif
+
+  call togglebg#map("<F2>")
+endif
 
 filetype plugin indent on
