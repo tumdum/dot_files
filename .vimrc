@@ -75,6 +75,7 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 " map jk as esc since its easier to reach
 inoremap jk <esc>
 inoremap <esc> <nop>
+inoremap <Esc>[0 <nop>
 
 nnoremap <F1> :FufFile<cr>
 nnoremap <F5> :GundoToggle<CR>
