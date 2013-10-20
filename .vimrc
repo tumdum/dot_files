@@ -2,7 +2,6 @@ syntax on
 filetype plugin indent on
 
 set relativenumber
-colorscheme desert
 
 " disable arrow keys
 nnoremap <up> <nop>
@@ -73,3 +72,5 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 inoremap jk <esc>
 inoremap <esc> <nop>
 call pathogen#infect()
+colorscheme solarized
+set background=dark
