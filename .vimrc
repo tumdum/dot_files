@@ -44,6 +44,7 @@ set noerrorbells
 set visualbell
 set t_vb=
 
+colorscheme desert
 if has("gui_running")
   " disable gui toolbars
   set guioptions-=m  "remove menu bar
@@ -75,7 +76,6 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 " map jk as esc since its easier to reach
 inoremap jk <esc>
 inoremap <esc> <nop>
-inoremap <Esc>[0 <nop>
 
 nnoremap <F1> :FufFile<cr>
 nnoremap <F5> :GundoToggle<CR>
@@ -94,30 +94,12 @@ Bundle 'gmarik/vundle'
 " Github:
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'Lokaltog/vim-easymotion'
-Bundle 'altercation/vim-colors-solarized'
 Bundle 'sjl/gundo.vim'
 Bundle 'sjl/vitality.vim'
+Bundle 'Blackrush/vim-gocode'
 
 " Vim.org:
 Bundle 'L9'
 Bundle 'FuzzyFinder'
-
-set background=dark
-let g:solarized_termtrans = 1
-colorscheme solarized
-
-if colors_name == 'solarized'
-  if has('gui_macvim')
-    set transparency=0
-  endif
-
-  if !has('gui_running') && $TERM_PROGRAM == 'Apple_Terminal'
-    let g:solarized_termcolors = &t_Co
-    let g:solarized_termtrans = 1
-    colorscheme solarized
-  endif
-
-  call togglebg#map("<F2>")
-endif
 
 filetype plugin indent on
