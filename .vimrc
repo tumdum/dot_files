@@ -77,7 +77,7 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 inoremap jk <esc>
 inoremap <esc> <nop>
 
-nnoremap <F1> :FufFile<cr>
+nnoremap <F1> :CtrlP .<cr>
 nnoremap <F5> :GundoToggle<CR>
 
 " save all when we lost focus
@@ -97,9 +97,9 @@ Bundle 'Lokaltog/vim-easymotion'
 Bundle 'sjl/gundo.vim'
 Bundle 'sjl/vitality.vim'
 Bundle 'Blackrush/vim-gocode'
+Bundle 'kien/ctrlp.vim'
 
 " Vim.org:
 Bundle 'L9'
-Bundle 'FuzzyFinder'
 
 filetype plugin indent on
