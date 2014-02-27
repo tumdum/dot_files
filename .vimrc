@@ -18,6 +18,8 @@ set showmatch                   " Show matching brackets.
 set ruler                       " show the line number on the bar
 set backspace=indent,eol,start 	" Enable backspacing over selected things
 set nocompatible              	" vim, not vi
+set laststatus=2                " always display status line
+set colorcolumn=80
 set scrolloff=5               	" keep at least 5 lines above/below
 set sidescrolloff=5           	" keep at least 5 lines left/right
 set history=1000
