@@ -18,6 +18,8 @@ set showmatch                   " Show matching brackets.
 set ruler                       " show the line number on the bar
 set backspace=indent,eol,start 	" Enable backspacing over selected things
 set nocompatible              	" vim, not vi
+set laststatus=2                " always display status line
+set colorcolumn=80
 set scrolloff=5               	" keep at least 5 lines above/below
 set sidescrolloff=5           	" keep at least 5 lines left/right
 set history=1000
@@ -38,7 +40,6 @@ set incsearch                   " incremental search
 set ignorecase                  " ignore case when searching
 set smartcase                   " unless a capital letter is used
 set ff=unix                     " end lines unix-style
-set colorcolumn=80              " highlight column 80
 
 " Turn off annoying error bells:
 set noerrorbells
@@ -105,6 +106,5 @@ Bundle 'kien/ctrlp.vim'
 
 " Vim.org:
 Bundle 'L9'
-Bundle 'FuzzyFinder'
 
 filetype plugin indent on
