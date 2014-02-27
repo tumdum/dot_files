@@ -29,15 +29,16 @@ set undodir=~/.vim/undo
 set autoindent                  " set the cursor at same indent as line above
 set smartindent                 " try to be smart about indenting (C-style)
 set expandtab                   " expand <Tab>s with spaces; death to tabs!
-set shiftwidth=2                " spaces for each step of (auto)indent
-set softtabstop=2               " set virtual tab stop
-set tabstop=2                   " render existing tabs as if spaces
+set shiftwidth=4                " spaces for each step of (auto)indent
+set softtabstop=4               " set virtual tab stop
+set tabstop=4                   " render existing tabs as if spaces
 
 set hlsearch                    " highlight current search
 set incsearch                   " incremental search
 set ignorecase                  " ignore case when searching
 set smartcase                   " unless a capital letter is used
 set ff=unix                     " end lines unix-style
+set colorcolumn=80              " highlight column 80
 
 " Turn off annoying error bells:
 set noerrorbells
@@ -77,7 +78,10 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 inoremap jk <esc>
 inoremap <esc> <nop>
 
-nnoremap <F1> :FufFile<cr>
+nnoremap <F1> :CtrlP .<cr>
+nnoremap <F2> :tabprev<cr>
+nnoremap <F3> :tabnext<cr>
+nnoremap <F4> :tabnew<cr>
 nnoremap <F5> :GundoToggle<CR>
 
 " save all when we lost focus
@@ -97,6 +101,7 @@ Bundle 'Lokaltog/vim-easymotion'
 Bundle 'sjl/gundo.vim'
 Bundle 'sjl/vitality.vim'
 Bundle 'Blackrush/vim-gocode'
+Bundle 'kien/ctrlp.vim'
 
 " Vim.org:
 Bundle 'L9'
