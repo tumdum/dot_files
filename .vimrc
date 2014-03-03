@@ -18,6 +18,8 @@ set showmatch                   " Show matching brackets.
 set ruler                       " show the line number on the bar
 set backspace=indent,eol,start 	" Enable backspacing over selected things
 set nocompatible              	" vim, not vi
+set laststatus=2                " always display status line
+set colorcolumn=80
 set scrolloff=5               	" keep at least 5 lines above/below
 set sidescrolloff=5           	" keep at least 5 lines left/right
 set history=1000
@@ -29,9 +31,9 @@ set undodir=~/.vim/undo
 set autoindent                  " set the cursor at same indent as line above
 set smartindent                 " try to be smart about indenting (C-style)
 set expandtab                   " expand <Tab>s with spaces; death to tabs!
-set shiftwidth=2                " spaces for each step of (auto)indent
-set softtabstop=2               " set virtual tab stop
-set tabstop=2                   " render existing tabs as if spaces
+set shiftwidth=4                " spaces for each step of (auto)indent
+set softtabstop=4               " set virtual tab stop
+set tabstop=4                   " render existing tabs as if spaces
 
 set hlsearch                    " highlight current search
 set incsearch                   " incremental search
@@ -80,6 +82,7 @@ inoremap <esc> <nop>
 nnoremap <F1> :CtrlP .<cr>
 nnoremap <F2> :tabprev<cr>
 nnoremap <F3> :tabnext<cr>
+nnoremap <F4> :tabnew<cr>
 nnoremap <F5> :GundoToggle<CR>
 
 " save all when we lost focus
