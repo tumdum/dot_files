@@ -78,6 +78,8 @@ inoremap jk <esc>
 inoremap <esc> <nop>
 
 nnoremap <F1> :CtrlP .<cr>
+nnoremap <F2> :tabprev<cr>
+nnoremap <F3> :tabnext<cr>
 nnoremap <F5> :GundoToggle<CR>
 
 " save all when we lost focus
