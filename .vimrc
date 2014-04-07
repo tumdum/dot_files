@@ -103,8 +103,13 @@ Bundle 'sjl/gundo.vim'
 Bundle 'sjl/vitality.vim'
 Bundle 'Blackrush/vim-gocode'
 Bundle 'kien/ctrlp.vim'
+Bundle 'drmikehenry/vim-headerguard'
 
 " Vim.org:
 Bundle 'L9'
 
 filetype plugin indent on
+
+function! g:HeaderguardName()
+    return substitute(toupper(expand('%')), '[/.]', '_', 'g') . '_'
+endfunction
