@@ -98,6 +98,7 @@ Bundle 'sjl/gundo.vim'
 Bundle 'sjl/vitality.vim'
 Bundle 'Blackrush/vim-gocode'
 Bundle 'kien/ctrlp.vim'
+Bundle 'tpope/vim-dispatch'
 
 " Vim.org:
 Bundle 'L9'
