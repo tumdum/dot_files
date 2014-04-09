@@ -116,3 +116,7 @@ filetype plugin indent on
 function! g:HeaderguardName()
     return substitute(toupper(expand('%')), '[/.]', '_', 'g') . '_'
 endfunction
+
+function! g:HeaderguardLine3()
+    return '#endif  // ' . g:HeaderguardName()
+endfunction
