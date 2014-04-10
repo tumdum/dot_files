@@ -31,9 +31,9 @@ set undodir=~/.vim/undo
 set autoindent                  " set the cursor at same indent as line above
 set smartindent                 " try to be smart about indenting (C-style)
 set expandtab                   " expand <Tab>s with spaces; death to tabs!
-set shiftwidth=2                " spaces for each step of (auto)indent
-set softtabstop=2               " set virtual tab stop
-set tabstop=2                   " render existing tabs as if spaces
+set shiftwidth=4                " spaces for each step of (auto)indent
+set softtabstop=4               " set virtual tab stop
+set tabstop=4                   " render existing tabs as if spaces
 
 set hlsearch                    " highlight current search
 set incsearch                   " incremental search
@@ -80,6 +80,9 @@ inoremap jk <esc>
 inoremap <esc> <nop>
 
 nnoremap <F1> :CtrlP .<cr>
+nnoremap <F2> :tabprev<cr>
+nnoremap <F3> :tabnext<cr>
+nnoremap <F4> :tabnew<cr>
 nnoremap <F5> :GundoToggle<CR>
 
 " save all when we lost focus
@@ -102,8 +105,14 @@ Bundle 'Blackrush/vim-gocode'
 Bundle 'kien/ctrlp.vim'
 Bundle 'xolox/vim-misc'
 Bundle 'xolox/vim-notes'
+Bundle 'tpope/vim-dispatch'
+Bundle 'drmikehenry/vim-headerguard'
 
 " Vim.org:
 Bundle 'L9'
 
 filetype plugin indent on
+
+function! g:HeaderguardName()
+    return substitute(toupper(expand('%')), '[/.]', '_', 'g') . '_'
+endfunction
