@@ -100,6 +100,8 @@ Bundle 'sjl/gundo.vim'
 Bundle 'sjl/vitality.vim'
 Bundle 'Blackrush/vim-gocode'
 Bundle 'kien/ctrlp.vim'
+Bundle 'xolox/vim-misc'
+Bundle 'xolox/vim-notes'
 
 " Vim.org:
 Bundle 'L9'
