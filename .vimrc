@@ -39,6 +39,8 @@ set hlsearch                    " highlight current search
 set incsearch                   " incremental search
 set ignorecase                  " ignore case when searching
 set smartcase                   " unless a capital letter is used
+set mouse=a                     " enable mousek
+set ttymouse=xterm2             " enable mouse tracking via xterm
 set ff=unix                     " end lines unix-style
 
 " Turn off annoying error bells:
@@ -56,8 +58,9 @@ if has("gui_running")
   set guioptions-=L  "remove left hand scroll bar when in vsplit
   set guioptions+=c  "Using Vim warning style in gVim: http://stackoverflow.com/questions/4193654/using-vim-warning-style-in-gvim
   set guioptions-=e  "gui tabs rendered the same way as console tabs!
-  set listchars=trail:·,precedes:«,extends:»,tab:▸▸
 endif
+
+set listchars=trail:·,precedes:«,extends:»,tab:▸▸
 
 if has("win32")
   set gfn=Lucida_Console:h12
@@ -97,21 +100,39 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " Github:
-Bundle 'Valloric/YouCompleteMe'
+Bundle 'Blackrush/vim-gocode'
 Bundle 'Lokaltog/vim-easymotion'
+Bundle 'Valloric/YouCompleteMe'
+Bundle 'drmikehenry/vim-headerguard'
+Bundle 'ervandew/supertab'
+Bundle 'funorpain/vim-cpplint'
+Bundle 'justinmk/vim-sneak'
+Bundle 'kien/ctrlp.vim'
+Bundle 'scrooloose/nerdtree'
 Bundle 'sjl/gundo.vim'
 Bundle 'sjl/vitality.vim'
-Bundle 'Blackrush/vim-gocode'
-Bundle 'kien/ctrlp.vim'
+Bundle 'tpope/vim-dispatch'
 Bundle 'xolox/vim-misc'
 Bundle 'xolox/vim-notes'
-Bundle 'tpope/vim-dispatch'
-Bundle 'drmikehenry/vim-headerguard'
+Bundle 'majutsushi/tagbar'
 
 " Vim.org:
 Bundle 'L9'
+Bundle 'taglist.vim'
 
 filetype plugin indent on
+
+let g:ctrlp_max_files = 0 " no limit on number of files
+let g:ycm_confirm_extra_conf = 0
+let g:ycm_collect_identifiers_from_tags_files = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_show_diagnostics_ui = 1
+let g:ycm_always_populate_location_list = 1
+
+" super tab should travers completion list from top to bottom:
+let g:SuperTabDefaultCompletionType = "<c-n>"
+" fix auto complete menu behaviuour:
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 function! g:HeaderguardName()
     return substitute(toupper(expand('%')), '[/.]', '_', 'g') . '_'
