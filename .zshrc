@@ -52,6 +52,8 @@ export PATH="/usr/local/heroku/bin:$PATH"
 alias clip="xclip -selection c"
 alias ack="ack-grep --follow"
 alias tomaszklak="ssh tomaszklak.pl -t tmux attach"
+alias v="vim"
+alias t="tmux a || tmux" # attach if any session or create new one
 
 bindkey -v # enable vim mode
 bindkey '^R' history-incremental-search-backward
@@ -64,4 +66,3 @@ bindkey '\eOA' up-line-or-beginning-search
 bindkey '\e[A' up-line-or-beginning-search
 bindkey '\eOB' down-line-or-beginning-search
 bindkey '\e[B' down-line-or-beginning-search
-

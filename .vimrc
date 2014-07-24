@@ -3,6 +3,7 @@ filetype off
 syntax on
 
 set relativenumber
+set nu
 
 " disable arrow keys
 nnoremap <up> <nop>
@@ -107,6 +108,7 @@ Bundle 'xolox/vim-misc'
 Bundle 'xolox/vim-notes'
 Bundle 'tpope/vim-dispatch'
 Bundle 'drmikehenry/vim-headerguard'
+Bundle 'tpope/vim-fugitive'
 
 " Vim.org:
 Bundle 'L9'
