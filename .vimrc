@@ -116,7 +116,11 @@ Bundle 'sjl/vitality.vim'
 Bundle 'tpope/vim-dispatch'
 Bundle 'xolox/vim-misc'
 Bundle 'xolox/vim-notes'
-Bundle 'majutsushi/tagbar'
+Bundle 'tpope/vim-dispatch'
+Bundle 'drmikehenry/vim-headerguard'
+Bundle 'tpope/vim-fugitive'
+
+" Vim.org:
 Bundle 'L9'
 Bundle 'taglist.vim'
 
@@ -136,4 +140,8 @@ inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 function! g:HeaderguardName()
     return substitute(toupper(expand('%')), '[/.]', '_', 'g') . '_'
+endfunction
+
+function! g:HeaderguardLine3()
+    return '#endif  // ' . g:HeaderguardName()
 endfunction
