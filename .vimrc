@@ -3,6 +3,7 @@ filetype off
 syntax on
 
 set relativenumber
+set number
 
 " disable arrow keys
 nnoremap <up> <nop>
@@ -100,6 +101,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " Github:
+Bundle 'mileszs/ack.vim'
 Bundle 'Blackrush/vim-gocode'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'Valloric/YouCompleteMe'
@@ -115,8 +117,6 @@ Bundle 'tpope/vim-dispatch'
 Bundle 'xolox/vim-misc'
 Bundle 'xolox/vim-notes'
 Bundle 'majutsushi/tagbar'
-
-" Vim.org:
 Bundle 'L9'
 Bundle 'taglist.vim'
 
