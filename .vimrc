@@ -1,6 +1,37 @@
 set nocompatible               " be iMproved
 filetype off
 
+" Vundle
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle
+" required! 
+Plugin 'gmarik/vundle'
+
+" Github:
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'sjl/gundo.vim'
+Plugin 'sjl/vitality.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-notes'
+Plugin 'tpope/vim-dispatch'
+Plugin 'drmikehenry/vim-headerguard'
+Plugin 'tpope/vim-fugitive'
+Plugin 'fatih/vim-go'
+
+" Vim.org:
+Plugin 'L9'
+Plugin 'Mark'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+
+filetype plugin indent on
+syntax on
+
 set relativenumber
 set nu
 
@@ -87,36 +118,6 @@ nnoremap <F5> :GundoToggle<CR>
 " save all when we lost focus
 :au FocusLost * silent! wa
 
-" Vundle
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" let Vundle manage Vundle
-" required! 
-Plugin 'gmarik/vundle'
-
-" Github:
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'Lokaltog/vim-easymotion'
-Plugin 'sjl/gundo.vim'
-Plugin 'sjl/vitality.vim'
-Plugin 'kien/ctrlp.vim'
-Plugin 'xolox/vim-misc'
-Plugin 'xolox/vim-notes'
-Plugin 'tpope/vim-dispatch'
-Plugin 'drmikehenry/vim-headerguard'
-Plugin 'tpope/vim-fugitive'
-Plugin 'fatih/vim-go'
-
-" Vim.org:
-Plugin 'L9'
-Plugin 'Mark'
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-
-filetype plugin indent on
-syntax on
 
 function! g:HeaderguardName()
     return substitute(toupper(expand('%')), '[/.]', '_', 'g') . '_'
