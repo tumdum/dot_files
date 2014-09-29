@@ -1,6 +1,5 @@
 set nocompatible               " be iMproved
 filetype off
-syntax on
 
 set relativenumber
 set nu
@@ -117,6 +116,7 @@ Plugin 'Mark'
 call vundle#end()            " required
 
 filetype plugin indent on
+syntax on
 
 function! g:HeaderguardName()
     return substitute(toupper(expand('%')), '[/.]', '_', 'g') . '_'
