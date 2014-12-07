@@ -48,7 +48,8 @@ source $ZSH/oh-my-zsh.sh
 export PATH=$PATH:/home/tumdum/Developer/Go/bin:/home/tumdum/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/Users/tumdum/bin:/opt/X11/bin:/usr/local/MacGPG2/bin
 
 ### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+export PATH="$HOME/bin:/usr/local/heroku/bin:$PATH"
+export GOPATH=$HOME
 alias clip="xclip -selection c"
 alias ack="ack-grep --follow"
 alias tomaszklak="ssh tomaszklak.pl -t tmux attach"

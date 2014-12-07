@@ -11,20 +11,19 @@ Plugin 'gmarik/vundle'
 
 " Github:
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'Lokaltog/vim-easymotion'
-Plugin 'sjl/gundo.vim'
-Plugin 'sjl/vitality.vim'
 Plugin 'kien/ctrlp.vim'
-Plugin 'xolox/vim-misc'
-Plugin 'xolox/vim-notes'
 Plugin 'tpope/vim-dispatch'
 Plugin 'drmikehenry/vim-headerguard'
-Plugin 'tpope/vim-fugitive'
+" == Go
 Plugin 'fatih/vim-go'
+" == Clojure
+Plugin 'amdt/vim-niji'
+Plugin 'tpope/vim-fireplace'
 
 " Vim.org:
 Plugin 'L9'
-Plugin 'Mark'
+" == Clojure
+Plugin 'paredit.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
