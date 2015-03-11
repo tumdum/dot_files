@@ -5,7 +5,7 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="ys"
+ZSH_THEME="jtriley"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -40,7 +40,7 @@ ZSH_THEME="ys"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git command-not-found osx terminalapp battery)
+plugins=(command-not-found osx terminalapp)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -48,7 +48,8 @@ source $ZSH/oh-my-zsh.sh
 export PATH=$PATH:/home/tumdum/Developer/Go/bin:/home/tumdum/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/Users/tumdum/bin:/opt/X11/bin:/usr/local/MacGPG2/bin
 
 ### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+export PATH="$HOME/bin:/usr/local/heroku/bin:$PATH"
+export GOPATH=$HOME
 alias clip="xclip -selection c"
 alias ack="ack-grep --follow"
 alias tomaszklak="ssh tomaszklak.pl -t tmux attach"

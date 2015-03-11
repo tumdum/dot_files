@@ -1,5 +1,31 @@
 set nocompatible               " be iMproved
 filetype off
+
+" Vundle
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle
+" required! 
+Plugin 'gmarik/Vundle.vim'
+
+" Github:
+Plugin 'kien/ctrlp.vim'
+Plugin 'tpope/vim-dispatch'
+Plugin 'drmikehenry/vim-headerguard'
+" == Go
+Plugin 'fatih/vim-go'
+Plugin 'Blackrush/vim-gocode'
+
+" Vim.org:
+Plugin 'L9'
+" == Clojure
+Plugin 'paredit.vim'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+
+filetype plugin indent on
 syntax on
 
 set relativenumber
@@ -14,11 +40,13 @@ inoremap <up> <nop>
 inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
-
+nnoremap j k
+nnoremap k j
+nnoremap h l
+nnoremap l h
 set showmatch                   " Show matching brackets.
 set ruler                       " show the line number on the bar
 set backspace=indent,eol,start 	" Enable backspacing over selected things
-set nocompatible              	" vim, not vi
 set laststatus=2                " always display status line
 set colorcolumn=80
 set scrolloff=5               	" keep at least 5 lines above/below
@@ -91,40 +119,6 @@ nnoremap <F5> :GundoToggle<CR>
 
 " save all when we lost focus
 :au FocusLost * silent! wa
-
-" Vundle
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-" let Vundle manage Vundle
-" required! 
-Bundle 'gmarik/vundle'
-
-" Github:
-Bundle 'mileszs/ack.vim'
-Bundle 'Blackrush/vim-gocode'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'drmikehenry/vim-headerguard'
-Bundle 'ervandew/supertab'
-Bundle 'funorpain/vim-cpplint'
-Bundle 'justinmk/vim-sneak'
-Bundle 'kien/ctrlp.vim'
-Bundle 'scrooloose/nerdtree'
-Bundle 'sjl/gundo.vim'
-Bundle 'sjl/vitality.vim'
-Bundle 'tpope/vim-dispatch'
-Bundle 'xolox/vim-misc'
-Bundle 'xolox/vim-notes'
-Bundle 'tpope/vim-dispatch'
-Bundle 'drmikehenry/vim-headerguard'
-Bundle 'tpope/vim-fugitive'
-
-" Vim.org:
-Bundle 'L9'
-Bundle 'taglist.vim'
-
-filetype plugin indent on
 
 let g:ctrlp_max_files = 0 " no limit on number of files
 let g:ycm_confirm_extra_conf = 0
