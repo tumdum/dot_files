@@ -15,7 +15,9 @@ Plugin 'tpope/vim-dispatch'
 Plugin 'drmikehenry/vim-headerguard'
 " == Go
 Plugin 'fatih/vim-go'
-Plugin 'Blackrush/vim-gocode'
+" == Clojure
+Plugin 'amdt/vim-niji'
+Plugin 'tpope/vim-fireplace'
 
 " Vim.org:
 Plugin 'L9'
@@ -40,10 +42,7 @@ inoremap <up> <nop>
 inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
-nnoremap j k
-nnoremap k j
-nnoremap h l
-nnoremap l h
+
 set showmatch                   " Show matching brackets.
 set ruler                       " show the line number on the bar
 set backspace=indent,eol,start 	" Enable backspacing over selected things
@@ -119,18 +118,6 @@ nnoremap <F5> :GundoToggle<CR>
 
 " save all when we lost focus
 :au FocusLost * silent! wa
-
-let g:ctrlp_max_files = 0 " no limit on number of files
-let g:ycm_confirm_extra_conf = 0
-let g:ycm_collect_identifiers_from_tags_files = 1
-let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_show_diagnostics_ui = 1
-let g:ycm_always_populate_location_list = 1
-
-" super tab should travers completion list from top to bottom:
-let g:SuperTabDefaultCompletionType = "<c-n>"
-" fix auto complete menu behaviuour:
-inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 function! g:HeaderguardName()
     return substitute(toupper(expand('%')), '[/.]', '_', 'g') . '_'
