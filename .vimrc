@@ -13,19 +13,29 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-dispatch'
 Plugin 'drmikehenry/vim-headerguard'
+Plugin 'AndrewRadev/simple_bookmarks.vim'
 " == Go
 Plugin 'fatih/vim-go'
 " == Clojure
-Plugin 'amdt/vim-niji'
 Plugin 'tpope/vim-fireplace'
+Plugin 'tpope/vim-surround'
+" == Scala
+Plugin 'derekwyatt/vim-scala'
+" == Rust
+Plugin 'rust-lang/rust.vim'
+
+Plugin 'aklt/plantuml-syntax'
 
 " Vim.org:
 Plugin 'L9'
+Plugin 'Mark'
 " == Clojure
 Plugin 'paredit.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
+
+let g:mapleader = ","
 
 filetype plugin indent on
 syntax on
@@ -56,6 +66,7 @@ set noswapfile                  " disable swap files
 set undofile
 set undodir=~/.vim/undo
 
+set nowrap                      " dont wrap lines
 set autoindent                  " set the cursor at same indent as line above
 set smartindent                 " try to be smart about indenting (C-style)
 set expandtab                   " expand <Tab>s with spaces; death to tabs!
@@ -68,7 +79,9 @@ set incsearch                   " incremental search
 set ignorecase                  " ignore case when searching
 set smartcase                   " unless a capital letter is used
 set mouse=a                     " enable mousek
-set ttymouse=xterm2             " enable mouse tracking via xterm
+if !has('nvim')
+    set ttymouse=xterm2             " enable mouse tracking via xterm
+endif
 set ff=unix                     " end lines unix-style
 
 " Turn off annoying error bells:
@@ -108,6 +121,7 @@ nnoremap <leader>ev :split $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 " map jk as esc since its easier to reach
 inoremap jk <esc>
+inoremap jj <esc>
 inoremap <esc> <nop>
 
 nnoremap <F1> :CtrlP .<cr>
@@ -126,3 +140,10 @@ endfunction
 function! g:HeaderguardLine3()
     return '#endif  // ' . g:HeaderguardName()
 endfunction
+
+let g:paredit_leader = '\'
+
+let g:mwDefaultHighlightingPalette = 'maximum'
+let g:mwDefaultHighlightingNum = 20
+
+let g:simple_bookmarks_filename = ''
