@@ -123,6 +123,9 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 inoremap jk <esc>
 inoremap jj <esc>
 inoremap <esc> <nop>
+if has('nvim')
+    tnoremap jj <C-\><C-n>          " exit terminal mode 
+endif
 
 nnoremap <F1> :CtrlP .<cr>
 nnoremap <F2> :tabprev<cr>
