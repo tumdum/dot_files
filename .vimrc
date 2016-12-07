@@ -14,6 +14,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-dispatch'
 Plugin 'drmikehenry/vim-headerguard'
 Plugin 'AndrewRadev/simple_bookmarks.vim'
+Plugin 'ludovicchabant/vim-gutentags'
 " == Go
 Plugin 'fatih/vim-go'
 " == Clojure
@@ -46,12 +47,23 @@ set number
 " disable arrow keys
 nnoremap <up> <nop>
 nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
+" make it easy to switch tabs with left and right arrows in normal mode
+nnoremap <left> :tabprev<cr>
+nnoremap <right> :tabnext<cr>
+
 inoremap <up> <nop>
 inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
+
+" navigate splits
+nnoremap <c-up> <c-w>k
+nnoremap <c-down> <c-w>j
+nnoremap <c-left> <c-w>h
+nnoremap <c-right> <c-w>l
+
+nnoremap j gj
+nnoremap k gk
 
 set showmatch                   " Show matching brackets.
 set ruler                       " show the line number on the bar
@@ -112,10 +124,6 @@ endif
 " make it easy to type vim commands (without need to press shift)
 nnoremap ; :
 
-" make it easy to switch tabs with left and right arrows in normal mode
-nnoremap <left> :tabprev<cr>
-nnoremap <right> :tabnext<cr>
-
 " make it easy to edit vimrc
 nnoremap <leader>ev :split $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
@@ -135,6 +143,10 @@ nnoremap <F5> :GundoToggle<CR>
 
 " save all when we lost focus
 :au FocusLost * silent! wa
+
+" Search for test that contains '/' wihout escaping it, taken from
+" http://vim.wikia.com/wiki/Searching_for_expressions_which_include_slashes
+command! -nargs=1 Ss let @/ = escape(<q-args>, '/')|normal! /<C-R>/<CR>
 
 function! g:HeaderguardName()
     return substitute(toupper(expand('%')), '[/.]', '_', 'g') . '_'
