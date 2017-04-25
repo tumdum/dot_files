@@ -115,6 +115,7 @@ endif
 
 set listchars=trail:·,precedes:«,extends:»,tab:▸▸
 
+set gfn=Go\ Mono\ 12
 if has("win32")
   set gfn=Lucida_Console:h12
 elseif has("mac")
