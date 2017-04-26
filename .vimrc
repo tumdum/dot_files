@@ -1,13 +1,15 @@
 set nocompatible               " be iMproved
 filetype off
 
+set shell=/bin/bash
+
 " Vundle
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " let Vundle manage Vundle
 " required! 
-Plugin 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 
 " Github:
 Plugin 'kien/ctrlp.vim'
@@ -115,6 +117,7 @@ endif
 
 set listchars=trail:·,precedes:«,extends:»,tab:▸▸
 
+set gfn=Go\ Mono\ 12
 if has("win32")
   set gfn=Lucida_Console:h12
 elseif has("mac")
