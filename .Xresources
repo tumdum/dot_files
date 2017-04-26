@@ -1,0 +1,5 @@
+XTerm*faceName: Go Mono
+XTerm*background: black
+XTerm*foreground: white
+XTerm*faceSize: 13
+XTerm*selectToClipboard: true
