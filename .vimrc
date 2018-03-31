@@ -166,4 +166,6 @@ let g:simple_bookmarks_filename = ''
 
 if executable('rg')
     set grepprg=rg\ --vimgrep
+else
+    set grepprg=grep\ -srnI
 endif
