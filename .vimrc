@@ -65,6 +65,10 @@ nnoremap <c-right> <c-w>l
 nnoremap j gj
 nnoremap k gk
 
+" enable very magic mode by default for both forward and backward searches
+nnoremap / /\v
+nnoremap ? ?\v
+
 set showmatch                   " Show matching brackets.
 set ruler                       " show the line number on the bar
 set backspace=indent,eol,start 	" Enable backspacing over selected things
