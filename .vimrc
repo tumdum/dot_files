@@ -15,19 +15,17 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-dispatch'
 Plugin 'drmikehenry/vim-headerguard'
-Plugin 'AndrewRadev/simple_bookmarks.vim'
 Plugin 'ludovicchabant/vim-gutentags'
+Plugin 'wlangstroth/vim-racket'
 " == Go
 Plugin 'fatih/vim-go'
 " == Clojure
 Plugin 'tpope/vim-fireplace'
 Plugin 'tpope/vim-surround'
-" == Scala
-Plugin 'derekwyatt/vim-scala'
 " == Rust
 Plugin 'rust-lang/rust.vim'
-
-Plugin 'aklt/plantuml-syntax'
+" == Lisp
+Plugin 'kovisoft/slimv'
 
 " Vim.org:
 Plugin 'L9'
@@ -165,3 +163,7 @@ let g:mwDefaultHighlightingPalette = 'maximum'
 let g:mwDefaultHighlightingNum = 20
 
 let g:simple_bookmarks_filename = ''
+
+if executable('rg')
+    set grepprg=rg\ --vimgrep
+endif
