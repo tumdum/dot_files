@@ -15,8 +15,11 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-dispatch'
 Plugin 'drmikehenry/vim-headerguard'
-Plugin 'ludovicchabant/vim-gutentags'
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
+" Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'wlangstroth/vim-racket'
+Plugin 'easymotion/vim-easymotion'
 " == Go
 Plugin 'fatih/vim-go'
 " == Clojure
@@ -64,10 +67,6 @@ nnoremap <c-right> <c-w>l
 
 nnoremap j gj
 nnoremap k gk
-
-" enable very magic mode by default for both forward and backward searches
-nnoremap / /\v
-nnoremap ? ?\v
 
 set showmatch                   " Show matching brackets.
 set ruler                       " show the line number on the bar
@@ -134,7 +133,7 @@ nnoremap <leader>ev :split $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 " map jk as esc since its easier to reach
 inoremap jk <esc>
-inoremap jj <esc>
+inoremap hh <esc>
 inoremap <esc> <nop>
 if has('nvim')
     tnoremap jj <C-\><C-n>          " exit terminal mode 
@@ -173,3 +172,29 @@ if executable('rg')
 else
     set grepprg=grep\ -srnI
 endif
+
+" make it easy to type vim commands (without need to press shift)
+nnoremap s :
+
+" make it easy to switch tabs with left and right arrows in normal mode
+" nnoremap <left> :tabprev<cr>
+" nnoremap <right> :tabnext<cr>
+
+nnoremap <a-h> :tabnext<cr>
+nnoremap <a-t> :tabprev<cr>
+
+" navigate splits
+" c-h produces in terminals backspace...
+nnoremap <bs> <c-w>j
+nnoremap <c-t> <c-w>k
+nnoremap <c-n> <c-w>l
+nnoremap <c-d> <c-w>h
+
+" dvorak ...
+noremap d h
+noremap h j
+noremap t k
+noremap n l
+
+nnoremap ee dd
+nnoremap m n
